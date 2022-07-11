@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "af1076ee-bac4-45bd-afba-9d71443633d4",
+		"name": "Fram API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13926384"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employees",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$euPC2O3leHapUWmxRDjQNO1FEVHyb2Yg6SGuUINw/NSdaMquMJ94S",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/employees",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$euPC2O3leHapUWmxRDjQNO1FEVHyb2Yg6SGuUINw/NSdaMquMJ94S",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/api/employees/Nick",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"employees",
+						"Nick"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "$2y$10$euPC2O3leHapUWmxRDjQNO1FEVHyb2Yg6SGuUINw/NSdaMquMJ94S",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"Pete\": \"Nick\", \r\n    \"Barbara\": \"Nick\", \r\n    \"Nick\": \"Sophie\", \r\n    \"Sophie\": \"Jonas\" \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/employees",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "Token"
+		}
+	]
+}
